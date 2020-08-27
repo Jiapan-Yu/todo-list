@@ -64,9 +64,12 @@ export default {
   border none
   appearance none
   outline none
-  /* &:after {
-    content url()
-  } */
+  &:after{
+    content url('../assets/images/round.svg')
+  }
+  &:checked:after{
+    content url('../assets/images/done.svg')
+  }
 }
 .destroy {
   position absolute
