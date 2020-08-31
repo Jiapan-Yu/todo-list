@@ -1,1 +1,2 @@
-import './lifecycle'
+// import './lifecycle'
+import './data-binding'
