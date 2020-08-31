@@ -1,2 +1,2 @@
-import './practice/instance'
+import './practice/index.js'
 import './assets/styles/global.styl'
