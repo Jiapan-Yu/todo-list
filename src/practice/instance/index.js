@@ -17,6 +17,8 @@ setInterval(() => {
 // console.log(app.$options.data)
 // app.$options.render = h => h('div', {}, "new render func");
 
-app.$watch('text', (newV, oldV) => {
+const unwatch = app.$watch('text', (newV, oldV) => {
   console.log(newV + ': ' + oldV);
 })
+
+setTimeout(() => unwatch(), 4000)
