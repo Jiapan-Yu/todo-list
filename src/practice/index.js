@@ -1,3 +1,4 @@
 // import './lifecycle'
 // import './data-binding'
-import './computed'
+// import './computed'
+import './directive'
