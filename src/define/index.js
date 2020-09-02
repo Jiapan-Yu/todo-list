@@ -15,19 +15,20 @@ const component = {
   `,
   methods: {
     handleClick() {
-      this.onClick()
+      this.$emit('click')
     },
   },
 };
 
 new Vue({
   el: '#root',
+  // this.handleClick 的 this 也可以不加
   template: `
     <div>
       <comp-one 
         :active="true" 
         :propOne="text"
-        :on-click="this.handleClick"
+        @click="handleClick"
       ></comp-one>
       <comp-one :active="false"></comp-one>
     </div>
