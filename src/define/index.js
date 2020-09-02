@@ -4,14 +4,20 @@ const component = {
   props: {
     active: Boolean,
     propOne: String,
-    handleClick: Function,
+    onClick: Function,
   },
+  // this.handleClick 的 this 也可以不加
   template: `
     <div>
       <span v-show="active">see me if active</span>
-      <p @click="handleClick()">{{propOne}}</p>
+      <p @click="this.handleClick">{{propOne}}</p>
     </div>
   `,
+  methods: {
+    handleClick() {
+      this.onClick()
+    },
+  },
 };
 
 Vue.component('CompOne', component);
@@ -23,7 +29,7 @@ new Vue({
       <comp-one 
         :active="true" 
         :propOne="text"
-        :handleClick="this.handleClick"
+        :on-click="this.handleClick"
       ></comp-one>
       <comp-one :active="false"></comp-one>
     </div>
