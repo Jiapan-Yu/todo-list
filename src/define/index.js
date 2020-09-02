@@ -20,8 +20,6 @@ const component = {
   },
 };
 
-Vue.component('CompOne', component);
-
 new Vue({
   el: '#root',
   template: `
@@ -34,6 +32,9 @@ new Vue({
       <comp-one :active="false"></comp-one>
     </div>
   `,
+  components: {
+    CompOne: component,
+  },
   data: {
     text: 'some text1',
   },
