@@ -4,10 +4,10 @@ const component = {
   props: {
     active: Boolean,
     propOne: {
-      type: Number,
+      type: String,
       required: true,
       validator(v) {
-        if (v > 5) return false;
+        if (/a/i.test(v)) return false;
 
         return true
       },
@@ -38,21 +38,21 @@ new Vue({
         :propOne="text"
         @click="handleClick"
       ></comp-one>
-      <comp-one :propOne="2" :active="false"></comp-one>
+      <comp-one propOne="some rndom text" :active="false"></comp-one>
     </div>
   `,
   components: {
     CompOne: component,
   },
   data: {
-    text: 1,
+    text: 'b',
   },
   mounted () {
     console.log(this.$refs)
   },
   methods: {
     handleClick() {
-      this.text += 1
+      this.text += 'a'
     },
   },
 });
