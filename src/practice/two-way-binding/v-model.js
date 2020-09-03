@@ -26,7 +26,7 @@ new Vue({
   },
   template: `
     <div>
-      <comp-one :value="value" @input="value = arguments[0]"></comp-one>
+      <comp-one v-model="value"></comp-one>
     </div>
   `
 })
