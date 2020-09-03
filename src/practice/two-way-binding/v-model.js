@@ -1,15 +1,19 @@
 import Vue from 'vue'
 
 const component = {
-  props: ['value'],
+  model: {
+    prop: 'value1',
+    event: 'change',
+  },
+  props: ['value1'],
   template: `
     <div>
-      <input type="text" @input="handleInput" :value="value">
+      <input type="text" @input="handleInput" :value="value1">
     </div>
   `,
   methods: {
     handleInput(e) {
-      this.$emit('input', e.target.value)
+      this.$emit('change', e.target.value)
     },
   }
 }
