@@ -3,7 +3,15 @@ import Vue from 'vue'
 const component = {
   props: {
     active: Boolean,
-    propOne: String,
+    propOne: {
+      type: Number,
+      required: true,
+      validator(v) {
+        if (v > 5) return false;
+
+        return true
+      },
+    },
     onClick: Function,
   },
   // this.handleClick 的 this 也可以不加
@@ -26,22 +34,25 @@ new Vue({
   template: `
     <div>
       <comp-one 
-        :active="true" 
+        :active="true"
         :propOne="text"
         @click="handleClick"
       ></comp-one>
-      <comp-one :active="false"></comp-one>
+      <comp-one :propOne="2" :active="false"></comp-one>
     </div>
   `,
   components: {
     CompOne: component,
   },
   data: {
-    text: 'some text1',
+    text: 1,
+  },
+  mounted () {
+    console.log(this.$refs)
   },
   methods: {
     handleClick() {
-      this.text += '1'
+      this.text += 1
     },
   },
 });
