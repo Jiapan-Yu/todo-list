@@ -2,11 +2,11 @@ import Vue from 'vue'
 
 const component = {
   name: 'comp',
-  template: `
-    <div :style="style">
-      <slot></slot>
-    </div>
-  `,
+  render(createElement) {
+    return createElement('div', {
+      style: this.style
+    }, this.$slots.default);
+  },
   data() {
     return {
       style: {
@@ -32,9 +32,18 @@ new Vue({
   mounted() {
     console.log()
   },
-  template: `
-    <comp-one ref="comp">
-      <span ref="span">{{value}}</span>
-    </comp-one>
-  `,
+  render(createElement) {
+    return createElement(
+      'comp-one',
+      {
+        ref: 'comp',
+      },
+      // 字符串不需要用数组，子节点的时候需要用数组
+      [
+        createElement('span', {
+          ref: 'span',
+        }, this.value)
+      ]
+    );
+  },
 });
