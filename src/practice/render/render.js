@@ -58,6 +58,13 @@ new Vue({
         createElement('span', {
           ref: 'span',
           slot: 'header',
+          // 会覆盖掉后面的 this.value
+          /* domProps: {
+            innerHTML: '<span>345</span>'
+          }, */
+          attrs: {
+            id: 'test-id',
+          },
         }, this.value)
       ]
     );
