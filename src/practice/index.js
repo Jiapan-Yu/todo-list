@@ -3,4 +3,5 @@
 // import './computed'
 // import './directive'
 // import './define'
-import './two-way-binding/v-model.js'
+// import './two-way-binding/v-model.js'
+import './render/render.js'
