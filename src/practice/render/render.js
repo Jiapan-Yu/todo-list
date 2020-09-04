@@ -7,7 +7,7 @@ const component = {
     return createElement('div', {
       style: this.style,
     }, [
-      this.$slots.default,
+      this.$slots.header,
       this.props1,
     ]);
   },
@@ -57,6 +57,7 @@ new Vue({
       [
         createElement('span', {
           ref: 'span',
+          slot: 'header',
         }, this.value)
       ]
     );
