@@ -6,9 +6,6 @@ const component = {
   render(createElement) {
     return createElement('div', {
       style: this.style,
-      on: {
-        click: () => { this.$emit('click') }
-      },
     }, [
       this.$slots.default,
       this.props1,
@@ -52,7 +49,7 @@ new Vue({
         props: {
           props1: this.value,
         },
-        on: {
+        nativeOn: {
           click: this.handleClick
         },
       },
