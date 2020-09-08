@@ -44,6 +44,10 @@ module.exports = merge(common, {
     overlay: {
       errors: true, // 出现了任何错误都让其展示到网页上面方便查看
     },
+    // mode: 'history'下且有SSR支持
+    /* historyApiFallback: {
+      index: '/index.html',
+    }, */
     hot: true,
   },
   resolve: {
