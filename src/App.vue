@@ -2,7 +2,8 @@
   <div id="app">
     <div id="cover"></div>
     <Header></Header>
-    <router-link :to="{name: 'app'}">app</router-link>
+    <!-- <router-link :to="{name: 'app', params: { id: 123 }}">app</router-link> -->
+    <router-link to="/app/123">app</router-link>
     <router-link to="/login">login</router-link>
     <transition name="fade">
       <router-view></router-view>
@@ -26,7 +27,10 @@ export default {
     Header,
     Footer,
     Todo,
-  }
+  },
+  mounted() {
+    console.log(this.$route)
+  },
 }
 </script>
 

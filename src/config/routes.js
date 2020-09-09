@@ -7,7 +7,7 @@ export default [
     redirect: '/app',
   },
   {
-    path: '/app',
+    path: '/app/:id',
     component: Todo,
     name: 'app',
     // children: [
