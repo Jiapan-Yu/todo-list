@@ -21,6 +21,7 @@
       @clearAllCompleted="clearAllCompleted"
     >
     </Tabs>
+    <!-- <router-view></router-view> -->
   </section>
 </template>
 

@@ -9,6 +9,13 @@ export default [
   {
     path: '/app',
     component: Todo,
+    name: 'app',
+    // children: [
+    //   {
+    //     path: 'test', // 不要加斜杠
+    //     component: Login,
+    //   }
+    // ],
   },
   {
     path: '/login',

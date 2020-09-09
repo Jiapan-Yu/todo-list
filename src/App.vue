@@ -2,9 +2,11 @@
   <div id="app">
     <div id="cover"></div>
     <Header></Header>
-    <router-link to="/app">app</router-link>
+    <router-link :to="{name: 'app'}">app</router-link>
     <router-link to="/login">login</router-link>
-    <router-view></router-view>
+    <transition name="fade">
+      <router-view></router-view>
+    </transition>
     <Footer></Footer>
   </div>
 </template>
