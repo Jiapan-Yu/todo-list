@@ -32,6 +32,8 @@ import Tabs from './tabs.vue'
 let id = 0
 
 export default {
+  // 以下守卫如果要进入下一步，则必须调用 next()
+  // 如果是中断，则可以什么都不写或者 next(false)
   beforeRouteEnter(to, from, next) {
     console.log('todo before enter')
     next(vm => {
@@ -49,6 +51,7 @@ export default {
     if (confirm('are you sure?')) next()    
   },
   props: ['id'],
+  // 同一路由下参数不同仅仅只调用一次
   mounted() {
     // console.log(this.id)
   },
