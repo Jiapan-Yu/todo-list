@@ -34,7 +34,9 @@ let id = 0
 export default {
   beforeRouteEnter(to, from, next) {
     console.log('todo before enter')
-    next()
+    next(vm => {
+      console.log('after enter vm.id is ', vm.id)
+    })
   },
   beforeRouteUpdate(to, from, next) {
     console.log('todo before update')

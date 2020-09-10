@@ -8,7 +8,8 @@ export default [
   },
   {
     path: '/app/:id',
-    props: route => ({ id: route.query.b }),
+    // props: route => ({ id: route.query.b }),
+    props: true,
     component: Todo,
     name: 'app',
     beforeEnter(to, from ,next) {
