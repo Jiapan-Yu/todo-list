@@ -9,7 +9,6 @@
       <router-view></router-view>
     </transition>
     <Footer></Footer>
-    <router-view name="a"></router-view>
   </div>
 </template>
 
