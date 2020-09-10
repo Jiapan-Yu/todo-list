@@ -44,7 +44,9 @@ export default {
   },
   beforeRouteLeave(to, from, next) {
     console.log('todo before leave')
-    next()
+    // 当用户修改了一个比较大的表单时，突然点了一个跳转链接
+    // 可以在这做提示，以防是用户不小心点了那个链接
+    if (confirm('are you sure?')) next()    
   },
   props: ['id'],
   mounted() {
