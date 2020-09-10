@@ -7,7 +7,8 @@ export default [
     redirect: '/app',
   },
   {
-    path: '/app/:id',
+    path: '/app',
+    props: route => ({ id: route.query.b }),
     component: Todo,
     name: 'app',
     // children: [
