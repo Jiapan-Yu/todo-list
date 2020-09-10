@@ -9,7 +9,10 @@ export default [
   {
     path: '/app',
     props: route => ({ id: route.query.b }),
-    component: Todo,
+    components: {
+      default: Todo,
+      a: Login,
+    },
     name: 'app',
     // children: [
     //   {
@@ -20,6 +23,9 @@ export default [
   },
   {
     path: '/login',
-    component: Login,
+    components: {
+      default: Login,
+      a: Todo,
+    },
   },
 ]
