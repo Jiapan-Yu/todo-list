@@ -11,6 +11,10 @@ export default [
     props: route => ({ id: route.query.b }),
     component: Todo,
     name: 'app',
+    beforeEnter(to, from ,next) {
+      console.log('app route before enter')
+      next()
+    },
     // children: [
     //   {
     //     path: 'test', // 不要加斜杠
