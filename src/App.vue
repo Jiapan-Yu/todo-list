@@ -33,14 +33,13 @@ export default {
   },
   mounted() {
     console.log(this.$store)
-    this.$store.state.count = 3
-    /* let i = 1
+    let i = 1
     setInterval(() => {
       this.$store.commit('updateCount', {
         num: i++,
         num2: 2,
       })
-    }, 1000) */
+    }, 1000)
   },
   computed: {
     // https://vuex.vuejs.org/zh/guide/state.html#mapstate-%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0
