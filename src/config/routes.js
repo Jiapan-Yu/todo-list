@@ -1,6 +1,3 @@
-import Todo from '../todo/todo.vue'
-import Login from '../login/login.vue'
-
 export default [
   {
     path: '/',
@@ -10,7 +7,7 @@ export default [
     path: '/app/:id',
     // props: route => ({ id: route.query.b }),
     props: true,
-    component: Todo,
+    component: () => import('../todo/todo.vue'),
     name: 'app',
     beforeEnter(to, from ,next) {
       console.log('app route before enter')
@@ -25,6 +22,6 @@ export default [
   },
   {
     path: '/login',
-    component: Login,
+    component: () => import('../login/login.vue'),
   },
 ]

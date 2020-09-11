@@ -16,7 +16,6 @@
 <script>
 import Header from './todo/header.vue'
 import Footer from './todo/footer.jsx'
-import Todo from './todo/todo.vue'
 
 export default {
   data() {
@@ -27,7 +26,6 @@ export default {
   components: {
     Header,
     Footer,
-    Todo,
   },
   mounted() {
     // console.log(this.$route)
