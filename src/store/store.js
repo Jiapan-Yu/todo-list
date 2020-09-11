@@ -14,5 +14,18 @@ export default () => {
     getters,
 
     actions,
+
+    modules: {
+      a: {
+        state: {
+          text: 1,
+        },
+      },
+      b: {
+        state: {
+          text: 2,
+        },
+      },
+    },
   })
 }

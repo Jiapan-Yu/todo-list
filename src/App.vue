@@ -3,6 +3,7 @@
     <div id="cover"></div>
     <Header></Header>
     <p>{{fullName}} {{count}}</p>
+    <p>{{textA}}</p>
     <router-link to="/app/123">app123</router-link>
     <router-link to="/app/456">app456</router-link>
     <router-link to="/login">login</router-link>
@@ -53,6 +54,10 @@ export default {
     ...mapMutations(['updateCount']),
   },
   computed: {
+    textA() {
+      return this.$store.state.b.text
+    },
+
     // https://vuex.vuejs.org/zh/guide/state.html#mapstate-%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0
     ...mapState(['count']),
 
