@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import App from './App.vue'
 import createRouter from './config/router'
+import store from './store/store'
 import './assets/styles/global.styl'
 
 Vue.use(VueRouter)
@@ -31,6 +32,7 @@ router.afterEach((to, from) => {
 
 new Vue({
   router,
+  store,
   render(h) {
     return h(App)
   }
