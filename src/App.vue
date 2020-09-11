@@ -35,7 +35,10 @@ export default {
     console.log(this.$store)
     let i = 1
     setInterval(() => {
-      this.$store.commit('updateCount', i++)
+      this.$store.commit('updateCount', {
+        num: i++,
+        num2: 2,
+      })
     }, 1000)
   },
   computed: {
