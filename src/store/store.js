@@ -20,6 +20,13 @@ export default () => {
         state: {
           text: 1,
         },
+        mutations: {
+          // 这儿的 state 为单独a模块里的 state
+          updateText(state, text) {
+            console.log('a.state', state)
+            state.text = text
+          },
+        },
       },
       b: {
         state: {
