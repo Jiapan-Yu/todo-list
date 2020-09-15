@@ -49,11 +49,11 @@ export default {
       time: 2000,
     })
 
-    this.updateText('124')
+    this['a/updateText']('124')
   },
   methods: {
     ...mapActions(['updateCountAsync']),
-    ...mapMutations(['updateCount', 'updateText']),
+    ...mapMutations(['updateCount', 'a/updateText']),
   },
   computed: {
     // https://vuex.vuejs.org/zh/guide/state.html#mapstate-%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0

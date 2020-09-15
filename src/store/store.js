@@ -17,6 +17,7 @@ export default () => {
 
     modules: {
       a: {
+        namespaced: true,
         state: {
           text: 1,
         },
