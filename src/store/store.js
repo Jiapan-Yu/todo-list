@@ -28,6 +28,11 @@ export default () => {
             state.text = text
           },
         },
+        getters: {
+          textPlus (state) {
+            return state.text + 2
+          },
+        },
       },
       b: {
         state: {

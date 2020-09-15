@@ -35,7 +35,6 @@ export default {
     Footer,
   },
   mounted() {
-    console.log(this.$store)
     // let i = 1
     // setInterval(() => {
     //   this.updateCount({
@@ -50,6 +49,7 @@ export default {
     })
 
     this['a/updateText']('124')
+    console.log(this.$store, this['a/textPlus'])
   },
   methods: {
     ...mapActions(['updateCountAsync']),
@@ -63,7 +63,7 @@ export default {
     }),
 
     // https://vuex.vuejs.org/zh/guide/getters.html#mapgetters-%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0
-    ...mapGetters(['fullName']),
+    ...mapGetters(['fullName', 'a/textPlus']),
   },
 }
 </script>
