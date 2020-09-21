@@ -3,7 +3,7 @@
     <div id="cover"></div>
     <Header></Header>
     <p>{{fullName}} {{counter}}</p>
-    <p>{{textA}}</p>
+    <p>{{textA}} {{textPlus}}</p>
     <router-link to="/app/123">app123</router-link>
     <router-link to="/app/456">app456</router-link>
     <router-link to="/login">login</router-link>
@@ -49,7 +49,7 @@ export default {
     })
 
     this['a/updateText']('124')
-    console.log(this.$store, this['a/textPlus'])
+    console.log(this.$store)
   },
   methods: {
     ...mapActions(['updateCountAsync']),
@@ -63,7 +63,10 @@ export default {
     }),
 
     // https://vuex.vuejs.org/zh/guide/getters.html#mapgetters-%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0
-    ...mapGetters(['fullName', 'a/textPlus']),
+    ...mapGetters({
+      'fullName': 'fullName',
+      textPlus: 'a/textPlus',
+    }),
   },
 }
 </script>
